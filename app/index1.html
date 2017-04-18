@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+
+<head>
+    <title>Tutors</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--<link rel="stylesheet" href="radius.css" />  	-->
+    <!-- jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Angular JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <!--<script type="text/javascript" src="config.js"></script>-->
+    <script src="script.js"></script>
+</head>
+
+<body ng-controller="myController">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Tutor&Tutorials</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tutorials
+        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">Angular</a></li>
+                        <li><a href="#">NodeJS</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Tutor</a></li>
+                <li><a href="#">MyAccount</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="filters">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label" for="level">Level:</label>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Basic</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Advanced</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="price">Price:</label>
+                            <div class="select">
+                               <select class="form-control" id="price">
+                                    <option>Free</option>
+                                    <option>Paid</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <div class="searchHeader">
+                    Showing results as per search criteria
+                </div>
+                <div class="media" ng-repeat="course in courses">
+                    
+                    <div class="media-left media-middle">
+                        <a href="">
+                            <img src="{{course.image}}" class="media-object" style="width:250px;height:180px">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{course.name}}</h4>
+                        <h5>{{course.author}}</h5>
+                        <p>{{course.description}}</p>
+                        <h6>{{course.duration}}</h6>
+                        <h6>{{course.price}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</body>
+
+</html>

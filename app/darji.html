@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="darjiApp">
+    <head>
+        <style>
+.eachproduct {
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid #695959;
+    padding: 5px;
+    margin: 25px;
+    float: left;
+}
+</style>
+        <title>Darji Warji</title>
+    	<!-- Latest compiled and minified CSS -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    	<!--<link rel="stylesheet" href="radius.css" />  	-->
+    	<!-- jQuery library -->
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    	<!-- Latest compiled and minified JavaScript -->
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    		
+    	<!-- Angular JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <!--<script type="text/javascript" src="config.js"></script>-->
+    	<script src="darjiController.js"></script>
+    </head>
+    <body ng-controller="darjiController as djC">
+        <!--<nav class="navbar">
+    		<div class="navbar-header">
+                <img src="public/images/download.png" alt="logo" style="width:30px;height:50px;">
+                Will Show Menu Items and search box here
+    		</div>
+            <div class="btn-group">
+                    
+                </div> 
+        </nav>-->
+        
+        <button type="button" class="btn btn-danger">Button</button>
+        <!--<button type="button" class="btn btn-danger">Action</button>-->
+                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                      </div>
+        
+            <div class="row">
+    		  <div class="col-md-3">
+                  Filters
+                  <div class="price-filter">
+                      <span>Min</span><input type="text" ng-model="filter.price.min" >
+                      <span>Max</span><input type="text" ng-model="filter.price.man" >
+                      <button ng-click="getHomeProducts()">Go</button>
+                  </div>  
+
+    		  </div>
+              <div class="col-md-9 productcontainer">
+                  
+                  <div ng-repeat="product in products" ng-show="products.length>0">
+                      <div class="eachproduct">
+                          <a href="{{$index}}">
+                            <img ng-src="{{product.img}}" alt = "Product Image" ng-click="showProduct($index)" style="width:230px;height:250px;">
+                            Product Name: {{product.name}}</br>
+                            <span>Rs. </span>{{product.price}}
+                            <!-- Product Short Name: {{product.shortName}}</br>
+                            
+                            Product Details: {{product.desc}}</br>-->
+                        </a>
+                      </div>
+                  </div>
+                  
+    		  </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
+
